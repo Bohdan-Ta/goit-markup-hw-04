@@ -7,6 +7,8 @@
     --background-hero: #2F303A;
     --btn-hover: #188CE8;
     --background-our-team: #F5F4FA;
+    --color-social-icon: #AFB1B8;
+
 }
 
 /*=============COMPONENT===============*/
@@ -79,6 +81,7 @@ body {
 
 /*=====логотип=====*/
 .logo {
+    margin-right: 93px;
     font-family: Raleway, sans-serif;
     font-weight: 700;
     font-size: 26px;
@@ -102,11 +105,6 @@ body {
     align-items: center;
 }
 
-.nav {
-    margin-left: 93px;
-
-}
-
 .site-nav {
     display: flex;
 }
@@ -117,6 +115,7 @@ body {
 
 .contacts {
     display: flex;
+    align-items: center;
     margin-left: auto;
 }
 
@@ -125,15 +124,8 @@ body {
 }
 
 .site-nav .link {
-    display: block;
     padding-top: 8px;
     padding-bottom: 8px;
-    color: var(--text-item);
-    text-decoration: none;
-    font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-
 }
 
 .site-nav .link.current {
@@ -158,6 +150,27 @@ body {
     color: var(--second-color-link);
 }
 
+.contacts-link .link {
+    display: flex;
+    align-items: center;
+}
+
+.icon-envelope {
+    content: "";
+    margin-right: 10px;
+    display: inline-block;
+    fill: currentColor;
+}
+
+.button-icon {
+    content: "";
+    margin-right: 10px;
+    display: inline-block;
+    fill: currentColor;
+}
+
+
+
 /*====END панель навигации====*/
 /*========== END HEDER===================*/
 
@@ -169,12 +182,13 @@ body {
     background-color: var(--background-hero);
     text-align: center;
 }
+
 .hero-image {
     max-width: 1600px;
     height: 600px;
     margin-left: auto;
     margin-right: auto;
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4) ), url(../images/background-hero.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/background-hero.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -249,32 +263,6 @@ body {
     display: flex;
 }
 
-.mail::before {
-    content: "";
-    display: inline-block;
-    width: 16px;
-    height: 12px;
-    
-    margin-right: 10px;
-    
-    background-image: url(../images/envelope-mail.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
-
-.tel::before {
-    content: "";
-    display: inline-block;
-    width: 10px;
-    height: 16px;
-    margin-right: 10px;
-    
-    background-image: url(../images/icon-smartphone.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
 
 .feature-list-box::before {
     margin-bottom: 30px;
@@ -287,6 +275,7 @@ body {
     background-position: center;
     background-color: var(--background-our-team);
 }
+
 .icon-antena::before {
     background-image: url(../images/icon-antenna.svg);
     background-size: 70px, 70px;
@@ -306,6 +295,7 @@ body {
     background-image: url(../images/icon-astronaut.svg);
     background-size: 70px, 70px;
 }
+
 .feature-list-box:not(:last-child) {
     margin-right: 30px
 }
@@ -322,7 +312,6 @@ body {
 }
 
 .section-title-work {
-    padding-top: 1px;
     margin-bottom: 50px;
     font-weight: 700;
     font-size: 36px;
@@ -368,7 +357,6 @@ body {
     margin-right: 30px;
 
     width: 270px;
-    height: 368px;
     text-align: center;
     background-color: var(--background-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -384,14 +372,89 @@ body {
 }
 
 .card-team-text {
+    margin-bottom: 16px;
     font-size: 16px;
     line-height: 1.19;
     text-align: center;
 }
+
+.social-list {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.social-list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background-color: var(--background-color);
+    border-radius: 50%;
+}
+
+.social-list-item:hover,
+.social-list-item:focus {
+    background-color: var(--second-color-link)
+}
+
+.social-list-item:hover .social-list-icon,
+.social-list-item:focus .social-list-icon {
+    fill: #ffffff;
+}
+
+.social-list-icon {
+    content: "";
+    width: 20px;
+    height: 20px;
+    fill: var(--color-social-icon);
+}
+
+
 /*=====end section our team=====*/
+
+/*===== clients========*/
+.clients {
+    display: flex;
+
+}
+
+.clients-list-item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.clients-list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 92px;
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.client-list-icon {
+    content: "";
+    width: 160px;
+    height: 60px;
+    fill: var(--color-social-icon);
+}
+
+.clients-list-item:hover,
+.clients-list-item:focus {
+    border-color: var(--second-color-link);
+}
+
+.clients-list-item:hover .client-list-icon,
+.clients-list-item:focus .client-list-icon {
+    fill: var(--second-color-link);
+}
 
 /*=======footer========*/
 .footer {
+    display: flex;
     padding-top: 60px;
     padding-bottom: 60px;
     background: #2F303A;
@@ -435,6 +498,51 @@ address {
 .link-cont:hover,
 .link-cont:focus {
     color: var(--second-color-link);
+}
+
+/*=====footer social block=====*/
+.footer-social-block {
+    display: inline-block;
+    margin-left: 70px;
+    width: 206px;
+    height: 80px;
+}
+
+.social-block-title {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.14;
+    font-style: normal;
+    color: var(--background-color);
+}
+
+.flex-baseline {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer-social-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.footer-social-list:hover,
+.footer-social-list:focus {
+    background-color: var(--second-color-link)
+}
+
+.footer-social-icon {
+    content: "";
+    width: 20px;
+    height: 20px;
+    fill: var(--background-color);
 }
 
 /*=======end footer========*/
@@ -509,6 +617,13 @@ address {
     height: 404px;
     background: #FFFFFF;
 
+}
+
+.card-container:hover,
+.card-container:focus {
+    border: 1px solid #EEEEEE;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .botton-part-cards {
